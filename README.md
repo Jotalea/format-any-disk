@@ -23,7 +23,7 @@ To install the program
 This will install `FAD` on your system, making it accessible system-wide.
 
 ## Usage
-- After installation, you can run FAD from anywhere in the terminal by simply typing `fad`.
+- After installation, you can run FAD from anywhere in the terminal by simply typing `sudo fad`.
 - Follow the on-screen prompts to select the USB device, set a label, and choose a mount point.
 
 ## Features

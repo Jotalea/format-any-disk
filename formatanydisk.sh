@@ -8,7 +8,7 @@ fi
 
 if [ "$1" == "-v" ] || [ "$1" == "--version" ]; then
     echo "> FAD - Format Any Disk"
-    echo "> Version 1.0.1"
+    echo "> Version 1.0.2"
     exit 0
 fi
 
@@ -17,7 +17,7 @@ if [ "$1" == "-u" ] || [ "$1" == "--uninstall" ]; then
 
     # Check if FAD is installed
     if [ -f "/bin/fad" ]; then
-        read -p "> FAD is installed. Do you want to uninstall it? (y/n): " confirm
+        read -p "< FAD is installed. Do you want to uninstall it? (y/n): " confirm
         if [ "$confirm" == "y" ]; then
             # Uninstalling FAD
             rm /bin/fad

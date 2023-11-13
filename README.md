@@ -3,6 +3,7 @@ Automatic script to format any disk with a FAT32 filesystem (a basic format, wor
 
 ## Description
 This script allows the formatting of a selected USB drive with a FAT32 filesystem. It provides the user with the ability to choose the device to format, assign a custom label to the filesystem, and select a mount point. The script must be run with superuser (root) privileges to function correctly.
+Note: Anything that this script does can be done by yourself, just by learning and using the commands; this is just a script to automate that process, in a format that works on most devices. If you want a different format, you can try to modify the script or you can run the commands by yourself.
 
 ## Requirements
 - A Linux-based operating system.

@@ -34,3 +34,6 @@ This script allows the formatting of a selected USB drive with a FAT32 filesyste
 - Designed for Linux-based operating systems.
 - Formats the selected drive only with the FAT32 filesystem.
 - Requires superuser privileges for execution.
+
+
+* "everywhere" means that it works on most modern systems available nowadays.

@@ -1,17 +1,24 @@
 #!/bin/bash
 
+# Current version of FAD
+CURRENT_VERSION="1.0.3"
+REPO_USER="Jotalea"
+REPO_NAME="format-any-disk"
+
 # Check if the script is running as root
 if [ "$EUID" -ne 0 ]; then
     echo "> This script must be run as root."
     exit 1
 fi
 
+# Version
 if [ "$1" == "-v" ] || [ "$1" == "--version" ]; then
     echo "> FAD - Format Any Disk"
-    echo "> Version 1.0.2"
+    echo "> Version $CURRENT_VERSION"
     exit 0
 fi
 
+# Uninstall
 if [ "$1" == "-u" ] || [ "$1" == "--uninstall" ]; then
     echo "> FAD - Format Any Disk"
 
@@ -31,6 +38,22 @@ if [ "$1" == "-u" ] || [ "$1" == "--uninstall" ]; then
         fi
     else
         echo "> FAD is not installed."
+    fi
+
+    exit 0
+fi
+
+# Check for updates
+if [ "$1" == "-c" ] || [ "$1" == "--check-update" ]; then
+    echo "> Checking for updates..."
+    # Fetch the latest tag (version) from the GitHub repository
+    LATEST_VERSION=$(curl -s "https://api.github.com/repos/$REPO_USER/$REPO_NAME/releases/latest" | grep -Po '"tag_name": "\K.*?(?=")')
+
+    if [ "$LATEST_VERSION" == "$CURRENT_VERSION" ]; then
+        echo "> You are using the latest version of FAD."
+    else
+        echo "> A new version of FAD is available: $LATEST_VERSION"
+        echo "> You can download it from https://github.com/$REPO_USER/$REPO_NAME/releases"
     fi
 
     exit 0

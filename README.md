@@ -1,39 +1,51 @@
 # Documentation for FAD (Format Any Disk) Script
-Automatic script to format any disk with a FAT32 filesystem (basic, works everywhere*). Designed for noobs or for lazy people (like me)
+Automatic script to format any disk with a FAT32 filesystem (a basic format, works almost everywhere).
 
 ## Description
 This script allows the formatting of a selected USB drive with a FAT32 filesystem. It provides the user with the ability to choose the device to format, assign a custom label to the filesystem, and select a mount point. The script must be run with superuser (root) privileges to function correctly.
 
 ## Requirements
 - A Linux-based operating system.
+- Git installed on your system (or an alternative way to download the scripts).
 - Superuser (root) privileges to run the script.
 
+## Installation
+1. **Clone the Repository**: Clone the FAD repository from GitHub to your local machine using:
+```git clone https://github.com/Jotalea/format-any-disk.git```
+2. **Navigate to the Repository Directory**: Change into the cloned directory:
+```cd format-any-disk```
+3. **Run the Installation Script**: Make the `install.sh` script executable and run it with root privileges:
+To make the installer executable
+```sudo chmod +x install.sh```
+To install the program
+```sudo ./install.sh```
+This will install `FAD` on your system, making it accessible system-wide.
+
 ## Usage
-1. **Save the Script**: Copy the script content into a file, e.g., `format_any_usb.sh`.
-2. **Make the Script Executable**: Execute `chmod +x format_any_usb.sh` to make the script executable.
-3. **Run the Script**: Run the script as superuser with `sudo ./format_any_usb.sh`.
+- After installation, you can run FAD from anywhere in the terminal by simply typing `fad`.
+- Follow the on-screen prompts to select the USB device, set a label, and choose a mount point.
 
 ## Features
-- **Device Listing**: Displays the storage devices available on the system.
-- **Device Selection**: Allows the user to specify the device to format.
-- **Formatting Confirmation**: Requests confirmation before proceeding with formatting to prevent accidental data loss.
-- **Label Assignment**: Allows the user to assign a custom label to the FAT32 filesystem.
-- **Mount Point Selection**: Enables the user to specify a mount point for the formatted drive.
-- **Formatting and Mounting**: Formats the selected device with FAT32 and mounts it at the specified point.
+- **Device Listing**: Lists available storage devices.
+- **Device Selection**: Enables specifying the device to format.
+- **Formatting Confirmation**: Requests confirmation to prevent accidental data loss.
+- **Label Assignment**: Allows setting a custom label for the FAT32 filesystem.
+- **Mount Point Selection**: Enables specifying the mount point for the formatted drive.
+- **Formatting and Mounting**: Formats the selected device and mounts it.
 
 ## Security Considerations
-- **Device Confirmation**: Ensure the correct device is selected to avoid data loss.
-- **Data Backup**: It's recommended to backup data before proceeding with formatting.
-- **Root Execution**: This script makes changes to partitions and filesystems, which requires superuser privileges.
+- **Device Confirmation**: Carefully select the correct device to avoid data loss.
+- **Data Backup**: Back up important data before formatting.
+- **Root Execution**: The script and the installer must be run as root due to the nature of the operations involved.
 
 ## Script Outputs
-- The script informs the user about each step it performs, including unmounting partitions, formatting the device, and mounting the formatted partition.
-- Upon completion, it displays a message confirming that the device has been formatted and mounted successfully.
+- Detailed step-by-step instructions are provided during the script execution.
+- Confirmation messages are shown upon successful formatting and mounting.
 
 ## Limitations
-- Designed for Linux-based operating systems.
-- Formats the selected drive only with the FAT32 filesystem.
-- Requires superuser privileges for execution.
+- Designed for Linux-based systems.
+- Only formats with the FAT32 filesystem.
+- Requires superuser privileges for execution and installation.
 
-
-* "everywhere" means that it works on most modern systems available nowadays.
+## Repository Information
+- The FAD script is hosted on GitHub at `https://github.com/Jotalea/format-any-disk.git`.

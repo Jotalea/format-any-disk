@@ -2,8 +2,38 @@
 
 # Check if the script is running as root
 if [ "$EUID" -ne 0 ]; then
-    echo "This script must be run as root."
+    echo "> This script must be run as root."
     exit 1
+fi
+
+if [ "$1" == "-v" ] || [ "$1" == "--version" ]; then
+    echo "> FAD - Format Any Disk"
+    echo "> Version 1.0.1"
+    exit 0
+fi
+
+if [ "$1" == "-u" ] || [ "$1" == "--uninstall" ]; then
+    echo "> FAD - Format Any Disk"
+
+    # Check if FAD is installed
+    if [ -f "/bin/fad" ]; then
+        read -p "> FAD is installed. Do you want to uninstall it? (y/n): " confirm
+        if [ "$confirm" == "y" ]; then
+            # Uninstalling FAD
+            rm /bin/fad
+            if [ $? -eq 0 ]; then
+                echo "> FAD uninstalled successfully."
+            else
+                echo "> Error: Failed to uninstall FAD."
+            fi
+        else
+            echo "> Uninstallation cancelled."
+        fi
+    else
+        echo "> FAD is not installed."
+    fi
+
+    exit 0
 fi
 
 # Warning
